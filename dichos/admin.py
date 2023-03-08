@@ -1,6 +1,10 @@
 from django.contrib import admin
 from .models import Dicho
 
-# Register your models here.
-admin.site.register(Dicho)
 
+class DichoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'saying', 'translation', 'category')
+    fields = ('saying', 'translation', 'category')
+
+
+admin.site.register(Dicho, DichoAdmin)
