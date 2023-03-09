@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home.as_view(), name="home"),
     path('about/', About.as_view(), name="about"),
-]
+    path('api/v1/dichos/', include('dichos.urls'))
+    ]
