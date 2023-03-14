@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
         fontFamily: {
-            sans: ['"Josefin Sans"',"sans-serif"],
+            sans: ['"Work Sans"',"sans-serif"],
             urban: ["Urbanist"],
-            work:['"Work Sans"']
+            // work:['"Work Sans"']
         }
     },
   },
