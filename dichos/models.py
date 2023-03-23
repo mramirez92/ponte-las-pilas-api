@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 # Create your models here.
 class Dicho(models.Model):
     dichos_category = [
-        (None, "Misc"),
+        (None, "--"),
         ("Life", "Life"),
         ("Patience", "Patience"),
         ("Motivation", "Motivation"),
@@ -13,6 +13,7 @@ class Dicho(models.Model):
         ("Relationships", "Relationships"),
         ("Love", "Love"),
         ("Funny", "Funny"),
+        ("Misc", "Misc")
 
     ]
     creator = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
