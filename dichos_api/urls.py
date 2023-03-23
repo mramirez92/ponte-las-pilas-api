@@ -17,9 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 # from .views import index
 from .views import Home, About
+from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home.as_view(), name="home"),
     path('about/', About.as_view(), name="about"),
+    # path('accounts/profile/', views.profile, name='profile'),
+
+    path('api/v1/dichos/', include('dichos.urls')),
+    path('api-auth/', include('rest_framework.urls')),
+    path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 ]

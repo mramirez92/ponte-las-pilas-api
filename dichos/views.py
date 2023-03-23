@@ -1,15 +1,20 @@
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
 from .models import Dicho
+# restfw
+from rest_framework import generics, permissions
+from .serializers import DichoSerializer
+from .permissions import IsOwnerOrReadOnly
 
 
-class DichoListView(ListView):
-    template_name = "dichos/dicho_list.html"
-    model = Dicho
+
+class DichoList(generics.ListCreateAPIView):
+    queryset = Dicho.objects.all()
+    serializer_class = DichoSerializer
+    # permission_classes = (IsOwnerOrReadOnly,)
 
 
-class DichoDetailView(DetailView):
-    template_name = "dichos/dicho_detail.html"
-    model = Dicho
+class DichoDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Dicho.objects.all()
+    serializer_class = DichoSerializer
+    permission_classes = (IsOwnerOrReadOnly, permissions.IsAuthenticatedOrReadOnly)
 
-# Create your views here.
+

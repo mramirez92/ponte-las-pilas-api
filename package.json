@@ -1,8 +1,11 @@
 {
   "watch": {
-    "build": [
-      "./templates/**/*.html"
-    ]
+    "build": {
+      "patterns": [
+        "./templates/**/*.html"
+      ],
+      "extensions": "html"
+    }
   },
   "scripts": {
     "build": "postcss static/css/main.css -o static/css/main.min.css",

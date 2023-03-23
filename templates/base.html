@@ -1,24 +1,83 @@
 {% load static %}
 <!doctype html>
-<html lang="en">
+<html lang="en" class="top scroll-smooth" id="top">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dichos API</title>
-    <link rel="stylesheet" href="{% static "css/main.min.css" %}">
-</head>
-<nav class="bg-cyan-500">
-    <a href="{% url "home" %}">Home</a>
-    <a href="{% url "about" %}">About</a>
-</nav>
-<body class="bg-green-100">
-<div class="">
-    {% block content %}
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="referrer" content="no-referrer-when-downgrade">
 
-    {% endblock %}
+	<title>Dichos API</title>
+	<link rel="stylesheet" href="{% static "css/main.min.css" %}">
+	<link rel="icon" href="static/assets/garland.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Urbanist:wght@200&family=Work+Sans:wght@300&display=swap"
+		  rel="stylesheet">
+</head>
+
+<body class="bg-cyan-900 flex flex-col text-slate-50">
+<div class="container flex flex-col justify-center content-center items-center">
+	<nav class="navbar fixed top-0 flex justify-between items-center w-full sm:px-2 md:px-3 ld:px-5 xl:px-6">
+		<div class="p-1 menu-center flex items-center space-x-6 on">
+			<a href="#top"
+			   class="py-2 text-lg  font-semibold hover:underline hover:underline-offset-8 hover:decoration-slate-900 hover:decoration-4 hover:animate-pulse">
+				Home
+			</a>
+
+		</div>
+		<div class="p-1 flex items-center space-x-6">
+			<a href="#api"
+			   class="py-2 text-lg  font-semibold hover:underline hover:underline-offset-8 hover:decoration-slate-900 hover:decoration-4 hover:animate-pulse">
+				API
+			</a>
+		</div>
+
+		<div class="p-1 flex items-center space-x-6">
+			<a href="#about"
+			   class="py-2 text-lg  font-semibold hover:underline hover:underline-offset-8 hover:decoration-slate-900 hover:decoration-4 hover:animate-pulse">
+				About
+			</a>
+		</div>
+		<a
+				class="inline-block rounded-full  p-3 hover:bg-slate-100/70 hover:text-indigo-400 focus:outline-none focus:ring active:bg-slate-100"
+				href="admin/"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+				<path fill-rule="evenodd"
+					  d="M3 4.25A2.25 2.25 0 015.25 2h5.5A2.25 2.25 0 0113 4.25v2a.75.75 0 01-1.5 0v-2a.75.75 0 00-.75-.75h-5.5a.75.75 0 00-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 00.75-.75v-2a.75.75 0 011.5 0v2A2.25 2.25 0 0110.75 18h-5.5A2.25 2.25 0 013 15.75V4.25z"
+					  clip-rule="evenodd"/>
+				<path fill-rule="evenodd"
+					  d="M6 10a.75.75 0 01.75-.75h9.546l-1.048-.943a.75.75 0 111.004-1.114l2.5 2.25a.75.75 0 010 1.114l-2.5 2.25a.75.75 0 11-1.004-1.114l1.048-.943H6.75A.75.75 0 016 10z"
+					  clip-rule="evenodd"/>
+			</svg>
+		</a>
+	</nav>
+	<div>
+		{% block content %}
+		
+		{% endblock %}
+	</div>
 
 </div>
+
+
+<footer class=" flex flex-row items-center absolute inset-x-0 sticky absolute bottom-0">
+	<div class=" button-arrow max-w-6xl mx-auto py-2 xl:px-0 md:flex justify-between ">
+		<div class="flex justify-center items-center content-center pb-3 ">
+			<button class="rounded-full bg-slate-50/70  hover:scale-125 hover:bg-slate-900 p-1"
+					onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+			   class="stroke-slate-600 text-teal-600 w-5 h-5 hover:animate-pulse hover:stroke-slate-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+          </svg>
+        </span>
+			</button>
+		</div>
+	</div>
+</footer>
+
 </body>
 </html>
