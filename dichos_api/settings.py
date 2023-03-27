@@ -68,6 +68,9 @@ INSTALLED_APPS = [
     # Drfw
     'rest_framework',
     'rest_framework.authtoken',
+    # corsheaders
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -75,6 +78,8 @@ MIDDLEWARE = [
     # whitenoise
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # corsheaders
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -184,3 +189,9 @@ SIMPLE_JWT = {
         seconds=60 * 60
     ),  # lasts for 60 minutes
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_METHODS = [
+    'GET',
+]
+
