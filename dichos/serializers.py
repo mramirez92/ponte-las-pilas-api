@@ -6,6 +6,6 @@ from .models import Dicho
 class DichoSerializer(serializers.ModelSerializer):
     class Meta:
         fields = (
-            'id', 'creator', 'saying', 'translation', 'category'
+            'id', 'saying', 'translation'
         )
         model = Dicho
