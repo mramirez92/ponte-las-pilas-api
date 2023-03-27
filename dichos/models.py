@@ -16,7 +16,7 @@ class Dicho(models.Model):
         ("Misc", "Misc")
 
     ]
-    creator = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    creator = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, default="1")
     saying = models.TextField(default='')
     translation = models.TextField(default='')
     category = models.CharField(choices=dichos_category, max_length=64)
